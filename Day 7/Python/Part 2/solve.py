@@ -1,20 +1,12 @@
 from pathlib import Path
-path = Path(__file__).parent / "../../input.txt"
+path = Path(__file__).parent / "../../sample.txt"
 
 data = []
 with path.open("rt") as f:
     data = f.readlines()
 
-def checkBag(bags, name, currBag):
-    if currBag==name:
-        return 1
-    if bags.get(currBag) is None:
-        return 0
-    else:
-        counts = []
-        for k, v in bags[currBag].items():
-            counts.append(checkBag(bags, name, k))
-        return max(counts)
+def recurseBag(bags, name):
+    pass
 
 ################
 
@@ -35,6 +27,11 @@ for rule in data:
 
 myBag = "shiny gold"
 found = 0
+
+for k, v in allBags[myBag]:
+    count *= v
+    for j,u in allBags[k]
+
 for k,v in allBags.items():
     if k != myBag:
         found += checkBag(allBags,myBag,k)
