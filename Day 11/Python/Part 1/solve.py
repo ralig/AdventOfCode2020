@@ -56,4 +56,15 @@ while True:
 answer = 0
 for row in newRows:
     answer += row.count("#")
+
+
+path = Path(__file__).parent / "../../output.txt"
+with path.open("wt") as f:
+    for row in newRows:
+        f.write(row + "\n")
+
+with path.open("rt") as f:
+    s= f.read()
+
+
 print(answer)
